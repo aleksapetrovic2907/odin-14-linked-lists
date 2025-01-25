@@ -34,4 +34,9 @@ export default class LinkedList {
   append(value) {
     this.tail.nextNode = new LinkedListNode(value);
   }
+
+  prepend(value) {
+    let newHead = new LinkedListNode(value, this.head);
+    this.head = newHead;
+  }
 }
