@@ -1,5 +1,5 @@
 export default class LinkedList {
-    constructor() {
-        this.head = null;
-    }
+  constructor() {
+    this.head = null;
+  }
 }
