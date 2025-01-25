@@ -47,6 +47,7 @@ export default class LinkedList {
     return null;
   }
 
+  // todo: dont get() tail. make it faster
   pop() {
     let current = this.head;
     let tail = this.tail;
@@ -56,5 +57,19 @@ export default class LinkedList {
     }
 
     current.nextNode = null;
+  }
+
+  contains(value) {
+    let current = this.head;
+
+    while (current !== null) {
+      if (current.value === value) {
+        return true;
+      }
+
+      current = current.nextNode;
+    }
+
+    return false;
   }
 }
