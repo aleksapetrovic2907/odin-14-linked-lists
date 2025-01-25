@@ -17,10 +17,6 @@ export default class LinkedList {
     return i;
   }
 
-  get head() {
-    return this.head;
-  }
-
   get tail() {
     let current = this.head;
 
