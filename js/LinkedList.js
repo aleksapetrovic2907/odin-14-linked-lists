@@ -35,4 +35,15 @@ export default class LinkedList {
     let newHead = new LinkedListNode(value, this.head);
     this.head = newHead;
   }
+
+  at(index) {
+    let i = 0;
+    let current = this.head;
+    while (current !== null) {
+      if (i === index) return current;
+      current = current.nextNode;
+    }
+
+    return null;
+  }
 }
