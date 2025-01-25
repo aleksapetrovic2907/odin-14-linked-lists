@@ -88,4 +88,16 @@ export default class LinkedList {
 
     return null;
   }
+
+  toString() {
+    let current = this.head;
+    let string = "(" + value + ")";
+    current = current.nextNode;
+
+    while (current !== null) {
+      string += " -> (" + value + ")";
+    }
+
+    return string;
+  }
 }
