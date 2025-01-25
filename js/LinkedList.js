@@ -1,3 +1,5 @@
+import LinkedListNode from "./LinkedListNode";
+
 export default class LinkedList {
   constructor() {
     this.head = null;
@@ -27,5 +29,9 @@ export default class LinkedList {
     }
 
     return current;
+  }
+
+  append(value) {
+    this.tail.nextNode = new LinkedListNode(value);
   }
 }
