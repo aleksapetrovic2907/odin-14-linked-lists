@@ -6,6 +6,8 @@ export default class LinkedList {
   }
 
   get size() {
+    if (this.isEmpty) return 0;
+
     let i = 0;
     let current = this.head;
 
@@ -18,7 +20,7 @@ export default class LinkedList {
   }
 
   get tail() {
-    if (this.head === null) {
+    if (this.isEmpty) {
       return null;
     }
 
@@ -38,7 +40,7 @@ export default class LinkedList {
   append(value) {
     const newNode = new LinkedListNode(value);
 
-    if (this.head === null) {
+    if (this.isEmpty) {
       this.head = newNode;
     } else {
       this.tail.nextNode = newNode;
@@ -74,6 +76,8 @@ export default class LinkedList {
   }
 
   contains(value) {
+    if (this.isEmpty) return false;
+
     let current = this.head;
 
     while (current !== null) {
@@ -88,6 +92,8 @@ export default class LinkedList {
   }
 
   getIndexOf(value) {
+    if (this.isEmpty) return null;
+
     let i = 0;
     let current = this.head;
 
@@ -104,6 +110,8 @@ export default class LinkedList {
   }
 
   toString() {
+    if (this.isEmpty) return "";
+
     let current = this.head;
     let string = "(" + value + ")";
     current = current.nextNode;
