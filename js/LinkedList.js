@@ -63,12 +63,16 @@ export default class LinkedList {
     return null;
   }
 
-  // todo: dont get() tail. make it faster
   pop() {
-    let current = this.head;
-    let tail = this.tail;
+    if (this.size === 1) {
+      const head = this.head;
+      this.head = null;
+      return head;
+    }
 
-    while (current.nextNode !== tail) {
+    let current = this.head;
+
+    while (current.nextNode.nextNode !== null) {
       current = current.nextNode;
     }
 
