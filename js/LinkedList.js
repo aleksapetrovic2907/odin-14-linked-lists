@@ -18,6 +18,10 @@ export default class LinkedList {
   }
 
   get tail() {
+    if (this.head === null) {
+      return null;
+    }
+
     let current = this.head;
 
     while (current.nextNode !== null) {
