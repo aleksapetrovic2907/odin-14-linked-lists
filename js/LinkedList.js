@@ -62,6 +62,10 @@ export default class LinkedList {
   }
 
   pop() {
+    if (this.size === 0) {
+      throw new Error("Cannot pop node from an empty LinkedList.");
+    }
+
     if (this.size === 1) {
       const head = this.head;
       this.head = null;
