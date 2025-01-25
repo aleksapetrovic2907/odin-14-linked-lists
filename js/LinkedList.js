@@ -146,6 +146,37 @@ export default class LinkedList {
     throw new RangeError("Index is out of bounds.");
   }
 
+  removeAt(index) {
+    if (this.isEmpty) {
+      throw new Error("Cannot remove node from an empty LinkedList.");
+    }
+
+    if (index === 0) {
+      this.head = this.head.nextNode;
+      return;
+    }
+
+    let i = 0;
+    let current = this.head;
+
+    while (current !== null) {
+      if (i === index - 1) {
+        if (current.nextNode) {
+          current.nextNode = current.nextNode.nextNode;
+        } else {
+          throw new RangeError("Index is out of bounds.");
+        }
+
+        return;
+      }
+
+      i++;
+      current = current.nextNode;
+    }
+
+    throw new RangeError("Index is out of bounds.");
+  }
+
   toString() {
     if (this.isEmpty) return "";
 
