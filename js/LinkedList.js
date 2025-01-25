@@ -6,12 +6,10 @@ export default class LinkedList {
   }
 
   get size() {
-    if (this.isEmpty) return 0;
-
     let i = 0;
     let current = this.head;
 
-    while (current.nextNode !== null) {
+    while (current !== null) {
       current = current.nextNode;
       i++;
     }
