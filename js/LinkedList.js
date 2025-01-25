@@ -117,6 +117,35 @@ export default class LinkedList {
     return null;
   }
 
+  insertAt(value, index) {
+    const newNode = new LinkedListNode(value);
+
+    if (this.isEmpty) {
+      if (index === 0) {
+        this.head = newNode;
+        return;
+      }
+
+      throw new RangeError("Index is out of bounds.");
+    }
+
+    let i = 0;
+    let current = this.head;
+
+    while (current !== null) {
+      if (i === index - 1) {
+        newNode.nextNode = current.nextNode;
+        current.nextNode = newNode;
+        return;
+      }
+
+      i++;
+      current = current.nextNode;
+    }
+
+    throw new RangeError("Index is out of bounds.");
+  }
+
   toString() {
     if (this.isEmpty) return "";
 
