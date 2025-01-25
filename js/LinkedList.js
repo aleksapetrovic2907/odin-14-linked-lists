@@ -28,7 +28,13 @@ export default class LinkedList {
   }
 
   append(value) {
-    this.tail.nextNode = new LinkedListNode(value);
+    const newNode = new LinkedListNode(value);
+
+    if (this.head === null) {
+      this.head = newNode;
+    } else {
+      this.tail.nextNode = newNode;
+    }
   }
 
   prepend(value) {
