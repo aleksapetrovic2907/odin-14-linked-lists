@@ -113,11 +113,11 @@ export default class LinkedList {
     if (this.isEmpty) return "";
 
     let current = this.head;
-    let string = "(" + value + ")";
+    let string = "(" + current.value + ")";
     current = current.nextNode;
 
     while (current !== null) {
-      string += " -> (" + value + ")";
+      string += " -> (" + current.value + ")";
     }
 
     return string;
