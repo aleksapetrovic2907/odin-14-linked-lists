@@ -72,7 +72,9 @@ export default class LinkedList {
       current = current.nextNode;
     }
 
+    let poppedNode = current.nextNode;
     current.nextNode = null;
+    return poppedNode;
   }
 
   contains(value) {
