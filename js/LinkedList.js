@@ -31,6 +31,10 @@ export default class LinkedList {
     return current;
   }
 
+  get isEmpty() {
+    return this.head === null;
+  }
+
   append(value) {
     const newNode = new LinkedListNode(value);
 
