@@ -118,6 +118,7 @@ export default class LinkedList {
 
     while (current !== null) {
       string += " -> (" + current.value + ")";
+      current = current.nextNode;
     }
 
     return string;
